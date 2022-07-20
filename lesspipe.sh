@@ -383,7 +383,7 @@ analyze_args () {
 	# shellcheck disable=SC2001
 	lessarg=$(echo "$lessarg" | sed 's/ -[a-zA-Z]*[rR]/ -r/')
 	has_cmd tput && colors=$(tput colors) || colors=0
-	if [[ $colors -ge 8 && $lessarg == *\ -[rR]* ]]; then
+	if [[ $colors -ge 8 && $lessarg == *[-\ ]-[rR]* ]]; then
 		COLOR="--color=always"
 	else
 		COLOR="--color=auto"
